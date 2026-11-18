@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-DElE98Ap.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DwZ6xghI.css">
+<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-BrxT-FOp.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BRbK7xR_.css">
 </head>
 <body><main id="app">
 <section class="field" id="field" aria-label="ボクセルの島">
@@ -12,7 +12,7 @@
     <button id="pause-btn" class="pause icon-btn" title="一時停止" aria-label="一時停止">Ⅱ</button>
   </div>
   <div id="wave-banner" class="wave-banner" aria-live="polite"></div>
-  <div class="scene-label"><span class="scene-pip"></span><span id="status-label">準備中</span><span id="wave-progress"></span><span id="territory-info"></span></div>
+  <div class="scene-label"><span class="scene-pip"></span><span id="status-label">準備中</span><span id="wave-progress"></span><span id="territory-info"></span><span id="save-state" hidden></span></div>
   <div id="enemy-forecast" class="enemy-forecast"></div><div id="tooltip" class="tooltip" role="status"></div>
   <div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
   <div class="bottom-area">
@@ -22,8 +22,9 @@
       <button class="build-option" data-tool="frost"><span class="tile-icon frost">❄</span><span class="tool-text"><b>氷結塔</b><small>90 G</small></span><kbd>3</kbd></button>
       <button class="build-option" data-tool="mine"><span class="tile-icon mine">◆</span><span class="tool-text"><b>採掘所</b><small>90 G</small></span><kbd>4</kbd></button>
     </div>
-    <div class="battle-controls">
-      <button id="expand-btn" class="expand-btn">＋ 島を追加</button><button id="start-wave" class="primary">襲撃開始 <span>▶</span></button>
+    <div id="raid-panel" class="raid-panel" hidden><div class="raid-head"><label for="raid-port">上陸地点</label><select id="raid-port"></select><strong id="raid-budget"></strong><button id="raid-end">終了</button></div><div id="raid-troops" class="raid-troops"></div></div>
+    <div class="battle-controls" id="battle-controls">
+      <button id="raid-btn" class="expand-btn">侵攻テスト</button><button id="expand-btn" class="expand-btn">＋ 島を追加</button><button id="start-wave" class="primary">襲撃開始 <span>▶</span></button>
       <button id="speed-btn" class="speed-btn" hidden>速度 ×1</button>
     </div>
   </div>
