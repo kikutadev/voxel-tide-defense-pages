@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-fhzsqSeD.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-D48a4V7c.css">
+<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-BGn6IwJZ.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B5GfEK8g.css">
 </head>
 <body><main id="app">
 <section class="field" id="field" aria-label="ボクセルの島">
   <div id="scene"></div>
   <div class="topbar">
-    <div class="brand"><span class="brand-symbol">◈</span><span class="brand-name">潮界防衛</span><span class="brand-sub">TIDAL FRONTIER</span></div>
     <div class="stats" aria-live="polite"><div class="stat"><small>灯台</small><strong id="hp">18 <span>♥</span></strong></div><div class="stat"><small>資金</small><strong id="gold">190 <span>G</span></strong></div><div class="stat"><small>襲撃</small><strong id="wave">01</strong></div></div>
     <button id="pause-btn" class="pause icon-btn" title="一時停止" aria-label="一時停止">Ⅱ</button>
+    <div class="scene-label"><span id="status-label">準備中</span><span id="wave-progress"></span><span id="territory-info"></span><span id="economy-info"></span><span id="save-state" hidden></span></div>
+    <div class="hud-secondary"><div id="enemy-forecast" class="enemy-forecast"></div><div id="wave-meter" hidden><i></i></div><button id="wave-report" hidden>前回の戦果</button></div><div id="online-nav" class="online-nav"><button id="online-toggle">オンライン</button><button id="history-btn">戦闘履歴</button><button id="ranking-btn" hidden>順位</button><button id="code-btn" hidden>復帰コード</button><button id="sync-btn" hidden>再同期</button></div>
   </div>
   <div id="wave-banner" class="wave-banner" aria-live="polite"></div>
-  <div class="scene-label"><span class="scene-pip"></span><span id="status-label">準備中</span><span id="wave-progress"></span><span id="territory-info"></span><span id="economy-info"></span><span id="save-state" hidden></span></div>
-  <div id="enemy-forecast" class="enemy-forecast"></div><div id="wave-meter" hidden><i></i></div><div id="review-bar" hidden><span id="review-summary"></span><button id="review-return">結果に戻る</button></div><button id="wave-report" hidden>前回の戦果</button><div id="tooltip" class="tooltip" role="status"></div>
-  <div id="online-nav" class="online-nav"><button id="online-toggle">オンライン</button><button id="history-btn">戦闘履歴</button><button id="ranking-btn" hidden>順位</button><button id="code-btn" hidden>復帰コード</button><button id="sync-btn" hidden>再同期</button></div><div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button id="sound-btn" type="button" aria-label="効果音" title="効果音の切替">音 ON</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
+  <div id="review-bar" hidden><span id="review-summary"></span><button id="review-return">結果に戻る</button></div><div id="tooltip" class="tooltip" role="status"></div>
+  <div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button id="sound-btn" type="button" aria-label="効果音" title="効果音の切替">音 ON</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
   <div class="bottom-area">
     <div id="facility-panel" class="facility-panel" hidden><div class="facility-heading"><strong id="facility-name"></strong><span id="facility-stats"></span><button id="facility-close" aria-label="閉じる">×</button></div><div id="facility-performance"></div><div class="facility-actions"><button id="facility-move">移動</button><button id="facility-sell">売却</button><button id="facility-upgrade0"></button><button id="facility-upgrade1"></button></div></div><div id="build-plan" class="build-plan" hidden><div><strong id="plan-name"></strong><span id="plan-effect"></span></div><button id="plan-cancel">取消</button><button id="plan-confirm">建設</button></div><div id="build-status" class="build-status"></div><div class="build-bar" id="build-bar">
       <button class="build-option selected" data-tool="bolt"><span class="tile-icon bolt">⌁</span><span class="tool-text"><b>連射砲</b><small>70 G</small></span><kbd>1</kbd></button>
