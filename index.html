@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-Cz3kpn8I.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BY9l7tgO.css">
+</head>
+<body><main id="app">
+<section class="field" id="field" aria-label="ボクセルの島">
+  <div id="scene"></div>
+  <div class="topbar">
+    <div class="brand"><span class="brand-symbol">◈</span><span class="brand-name">潮界防衛</span><span class="brand-sub">TIDAL FRONTIER</span></div>
+    <div class="stats" aria-live="polite"><div class="stat"><small>灯台</small><strong id="hp">18 <span>♥</span></strong></div><div class="stat"><small>資金</small><strong id="gold">190 <span>G</span></strong></div><div class="stat"><small>襲撃</small><strong id="wave">01</strong></div></div>
+    <button id="pause-btn" class="pause icon-btn" title="一時停止" aria-label="一時停止">Ⅱ</button>
+  </div>
+  <div id="wave-banner" class="wave-banner" aria-live="polite"></div>
+  <div class="scene-label"><span class="scene-pip"></span><span id="status-label">準備中</span><span id="wave-progress"></span></div>
+  <div id="tooltip" class="tooltip" role="status"></div>
+  <div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
+  <div class="bottom-area">
+    <div class="build-bar" id="build-bar">
+      <button class="build-option selected" data-tool="bolt"><span class="tile-icon bolt">⌁</span><span class="tool-text"><b>連射砲</b><small>70 G</small></span><kbd>1</kbd></button>
+      <button class="build-option" data-tool="cannon"><span class="tile-icon cannon">✹</span><span class="tool-text"><b>榴弾砲</b><small>120 G</small></span><kbd>2</kbd></button>
+      <button class="build-option" data-tool="frost"><span class="tile-icon frost">❄</span><span class="tool-text"><b>氷結塔</b><small>90 G</small></span><kbd>3</kbd></button>
+      <button class="build-option" data-tool="mine"><span class="tile-icon mine">◆</span><span class="tool-text"><b>採掘所</b><small>90 G</small></span><kbd>4</kbd></button>
+    </div>
+    <div class="battle-controls">
+      <button id="start-wave" class="primary">襲撃開始 <span>▶</span></button>
+      <button id="speed-btn" class="speed-btn" hidden>速度 ×1</button>
+    </div>
+  </div>
+  <div id="expand-panel" class="expand-panel" hidden><div class="panel-eyebrow">DEFENSE COMPLETE</div><h2>どの島へ広げる？</h2><p>土地と資金を得る代わりに、新しい敵の上陸地点が生まれます。</p><div id="expand-choices" class="expand-choices"></div></div>
+  <div id="overlay" class="overlay" hidden><div class="modal"><div class="eyebrow" id="overlay-label">GAME PAUSED</div><h1 id="overlay-title">一時停止</h1><p id="overlay-description"></p><button id="overlay-primary" class="primary">再開する ▶</button><button id="overlay-secondary" class="secondary" hidden>新しい島で再戦</button></div></div>
+  <div class="intro-tip" id="intro-tip">① 下の施設を選ぶ → ② 島のマスをタップして建設 → ③ 襲撃開始</div>
+</section>
+</main></body></html>
