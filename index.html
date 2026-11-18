@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-C0ypc3bU.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CP9jF2uc.css">
+<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-DP1ZLaHV.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D7EoZ22T.css">
 </head>
 <body><main id="app">
 <section class="field" id="field" aria-label="ボクセルの島">
@@ -14,7 +14,7 @@
   <div id="wave-banner" class="wave-banner" aria-live="polite"></div>
   <div class="scene-label"><span class="scene-pip"></span><span id="status-label">準備中</span><span id="wave-progress"></span><span id="territory-info"></span><span id="economy-info"></span><span id="save-state" hidden></span></div>
   <div id="enemy-forecast" class="enemy-forecast"></div><div id="tooltip" class="tooltip" role="status"></div>
-  <div id="online-nav" class="online-nav"><button id="online-toggle">オンライン</button><button id="history-btn">戦闘履歴</button><button id="ranking-btn" hidden>順位</button><button id="code-btn" hidden>復帰コード</button><button id="sync-btn" hidden>再同期</button></div><div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
+  <div id="online-nav" class="online-nav"><button id="online-toggle">オンライン</button><button id="history-btn">戦闘履歴</button><button id="ranking-btn" hidden>順位</button><button id="code-btn" hidden>復帰コード</button><button id="sync-btn" hidden>再同期</button></div><div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button id="sound-btn" type="button" aria-label="効果音" title="効果音の切替">音 ON</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
   <div class="bottom-area">
     <div id="facility-panel" class="facility-panel" hidden><div class="facility-heading"><strong id="facility-name"></strong><span id="facility-stats"></span><button id="facility-close" aria-label="閉じる">×</button></div><div class="facility-actions"><button id="facility-move">移動</button><button id="facility-sell">売却</button><button id="facility-upgrade0"></button><button id="facility-upgrade1"></button></div></div><div class="build-bar" id="build-bar">
       <button class="build-option selected" data-tool="bolt"><span class="tile-icon bolt">⌁</span><span class="tool-text"><b>連射砲</b><small>70 G</small></span><kbd>1</kbd></button>
@@ -23,7 +23,7 @@
       <button class="build-option" data-tool="mine"><span class="tile-icon mine">◆</span><span class="tool-text"><b>資源施設</b><small>90 G</small></span><kbd>4</kbd></button>
     </div>
     <div id="scout-panel" class="scout-panel" hidden><div class="scout-head"><strong>遠征先を選択</strong><button id="scout-home">帰還</button></div><div id="scout-tabs" class="scout-tabs" hidden><button id="cpu-tab">CPU</button><button id="pvp-tab">対人</button></div><div id="scout-targets" class="scout-targets"></div><div id="scout-info"></div><div class="scout-actions"><button id="scout-test" class="expand-btn">自分の基地をテスト</button><button id="scout-start" class="primary">侵攻開始</button></div></div>
-    <div id="replay-panel" class="raid-panel" hidden><div class="raid-head"><strong id="replay-time"></strong><button id="replay-pause">一時停止</button><button id="replay-speed">×1</button><button id="replay-exit">終了</button></div></div><div id="raid-panel" class="raid-panel" hidden><div class="raid-head"><label for="raid-port">上陸地点</label><select id="raid-port"></select><strong id="raid-budget"></strong><label for="raid-objective">目標</label><select id="raid-objective"><option value="">灯台</option></select><button id="raid-speed">×1</button><button id="raid-end">終了</button></div><div id="raid-troops" class="raid-troops"></div></div>
+    <div id="replay-panel" class="raid-panel" hidden><div class="raid-head"><strong id="replay-time"></strong><button id="replay-pause">一時停止</button><button id="replay-speed">×1</button><button id="replay-exit">終了</button></div></div><div id="raid-panel" class="raid-panel" hidden><div class="raid-head"><label for="raid-port">上陸地点</label><select id="raid-port"></select><strong id="raid-budget"></strong><label for="raid-objective">目標</label><select id="raid-objective"><option value="">灯台</option></select><button id="raid-speed">×1</button><button id="raid-end">終了</button></div><div id="raid-troops" class="raid-troops"></div><div id="unit-role" aria-live="polite"></div></div>
     <div class="battle-controls" id="battle-controls">
       <button id="raid-btn" class="expand-btn">遠征</button><button id="expand-btn" class="expand-btn">＋ 島を追加</button><button id="start-wave" class="primary">襲撃開始 <span>▶</span></button>
       <button id="speed-btn" class="speed-btn" hidden>速度 ×1</button>
