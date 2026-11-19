@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-C1HWN4XY.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-C8YhAbgV.css">
+<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/index-C97pLqVT.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BS6plOxQ.css">
 </head>
 <body><main id="app">
 <section class="field home-active" id="field" aria-label="ボクセルの島">
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div id="expand-panel" class="expand-panel" hidden><h2>どの島をつなぐ？</h2><p id="expand-detail">海域から無人島を選択</p><div id="expand-choices" class="expand-choices"></div><button id="confirm-expand" class="confirm-expand">この島をつなぐ</button><button id="close-expand" class="close-expand">準備に戻る</button></div>
-  <div id="overlay" class="overlay" hidden><div class="modal"><div class="eyebrow" id="overlay-label">GAME PAUSED</div><h1 id="overlay-title">一時停止</h1><p id="overlay-description"></p><div id="result-detail" hidden></div><button id="review-field" class="secondary" hidden>戦場を見る</button><button id="overlay-primary" class="primary">再開する ▶</button><button id="overlay-secondary" class="secondary" hidden>新しい島で再戦</button><button id="overlay-home" class="secondary overlay-home" hidden>ホームに戻る</button></div></div>
+  <div id="overlay" class="overlay" hidden><div class="modal"><div class="eyebrow" id="overlay-label">GAME PAUSED</div><h1 id="overlay-title">一時停止</h1><p id="overlay-description"></p><div id="result-reward" class="result-reward" hidden><strong id="result-tp"></strong><span id="result-tp-balance"></span></div><div id="result-detail" hidden></div><button id="review-field" class="secondary" hidden>戦場を見る</button><button id="overlay-primary" class="primary">再開する ▶</button><button id="overlay-secondary" class="secondary" hidden>新しい島で再戦</button><button id="overlay-home" class="secondary overlay-home" hidden>ホームに戻る</button></div></div>
   <dialog id="tech-dialog" class="game-dialog tech-dialog"><div class="dialog-heading"><h2>技術開発</h2><button data-close="tech-dialog" aria-label="閉じる">×</button></div><div class="tech-balance"><strong id="tech-balance"></strong><span id="tech-count"></span></div><p>解放した技術は次の防衛から使用できます。</p><div id="tech-list"></div><div id="tech-error" role="status"></div><button id="tech-close" class="primary">ホームに戻る</button></dialog><dialog id="online-dialog" class="game-dialog"><div class="dialog-heading"><h2>オンライン基地</h2><button data-close="online-dialog" aria-label="閉じる">×</button></div><p>専用の島を育て、ほかのプレイヤーの島を攻略。今のローカル基地はそのまま残ります。</p><label for="online-code">復帰コード（すでに基地を持っている場合）</label><input id="online-code" type="password" autocomplete="off" spellcheck="false" placeholder="64文字のコード"><div id="online-error" role="status"></div><div class="dialog-actions"><button id="online-create" class="expand-btn">新しい基地を作る</button><button id="online-connect" class="primary">接続</button></div></dialog>
   <dialog id="code-dialog" class="game-dialog"><div class="dialog-heading"><h2>復帰コード</h2><button data-close="code-dialog" aria-label="閉じる">×</button></div><p>別の端末から同じ基地に接続できます。第三者には共有しないでください。</p><input id="recovery-code" readonly><button id="copy-code" class="primary">コピー</button></dialog>
   <dialog id="history-dialog" class="game-dialog"><div class="dialog-heading"><h2 id="history-title">戦闘履歴</h2><button data-close="history-dialog" aria-label="閉じる">×</button></div><div id="history-list" class="history-list"></div></dialog>
