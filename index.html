@@ -1,53 +1,36 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/game-BDaab8UT.js"></script>
+<meta name="theme-color" content="#091e2b" /><title>潮界防衛 — 島を拡張するタワーディフェンス</title>  <script type="module" crossorigin src="./assets/game-8LQAoKrF.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/sound-Dl8aYW9R.js">
   <link rel="stylesheet" crossorigin href="./assets/game-7YI0NTdA.css">
 </head>
 <body><main id="app">
 <section class="field home-active" id="field" aria-label="ボクセルの島">
   <div id="scene"></div>
-  <section id="home-screen" class="home-screen" aria-label="ホーム">
-    <div class="home-content">
-      <header class="home-title"><p class="home-series">TIDAL FRONTIER</p><h1>潮界防衛</h1><p class="home-subtitle">島を開拓し、灯台を守り抜け。</p></header>
-      <nav class="home-menu" aria-label="ゲームモード">
-        <button id="home-play" class="home-primary"><span><strong id="home-play-label">防衛を始める</strong><small id="home-progress">新しい群島から開始</small></span><span aria-hidden="true" class="home-arrow">›</span></button>
-        <button id="home-new" class="home-item" hidden><span>新しい島で始める</span><span aria-hidden="true">›</span></button>
-        <button id="home-tech" class="home-item"><span>技術開発<small id="home-tp">0 TP</small></span><span aria-hidden="true">›</span></button><button id="home-online" class="home-item"><span>オンライン基地<small>基地を育て、他のプレイヤーと対戦</small></span><span aria-hidden="true">›</span></button>
-        <button id="home-history" class="home-item"><span>戦闘履歴</span><span aria-hidden="true">›</span></button>
-      </nav>
-      <p id="home-record" class="home-record"></p><p id="home-save-error" role="status" hidden></p>
-    </div>
-    <button id="home-sound" class="home-sound" type="button" aria-pressed="true">効果音 ON</button>
-  </section>
+  <section id="home-screen" class="home-screen" aria-label="ホーム"></section>
   <div class="topbar">
-    <div class="stats" aria-live="polite"><div class="stat"><small>灯台</small><strong id="hp">18 <span>♥</span></strong></div><div class="stat"><small>資金</small><strong id="gold">190 <span>G</span></strong></div><div class="stat"><small>襲撃</small><strong id="wave">01</strong></div></div>
+    <div class="stats" id="hud-stats" aria-live="polite"></div>
     <button id="pause-btn" class="pause icon-btn" title="一時停止" aria-label="一時停止">Ⅱ</button>
-    <div class="scene-label"><span id="status-label">準備中</span><span id="wave-progress"></span><span id="territory-info"></span><span id="economy-info"></span><span id="save-state" hidden></span></div>
-    <div class="hud-secondary"><div id="enemy-forecast" class="enemy-forecast"></div><div id="wave-meter" hidden><i></i></div><button id="wave-report" hidden>前回の戦果</button></div><div id="online-nav" class="online-nav"><button id="online-toggle">オンライン</button><button id="history-btn">戦闘履歴</button><button id="ranking-btn" hidden>順位</button><button id="code-btn" hidden>復帰コード</button><button id="sync-btn" hidden>再同期</button></div>
+    <div class="scene-label" id="hud-labels"></div>
+    <div class="hud-secondary"><div id="react-forecast-host"></div><div id="wave-meter" hidden><i></i></div><button id="wave-report" hidden>前回の戦果</button></div><div id="online-nav" class="online-nav"><button id="online-toggle">オンライン</button><button id="history-btn">戦闘履歴</button><button id="ranking-btn" hidden>順位</button><button id="code-btn" hidden>復帰コード</button><button id="sync-btn" hidden>再同期</button></div>
   </div>
   <div id="wave-banner" class="wave-banner" aria-live="polite"></div>
   <div id="review-bar" hidden><span id="review-summary"></span><button id="review-return">結果に戻る</button></div><div id="tooltip" class="tooltip" role="status"></div>
   <div class="view-controls"><button type="button" id="zoom-in" aria-label="拡大">＋</button><button type="button" id="zoom-out" aria-label="縮小">−</button><button id="sound-btn" type="button" aria-label="効果音" title="効果音の切替">音 ON</button><button type="button" id="reset-view" aria-label="視点を戻す">⌖</button></div>
   <div class="bottom-area">
-    <div id="facility-panel" class="facility-panel" hidden><div class="facility-heading"><strong id="facility-name"></strong><span id="facility-stats"></span><button id="facility-close" aria-label="閉じる">×</button></div><div id="facility-performance"></div><div class="facility-actions"><button id="facility-move">移動</button><button id="facility-sell">売却</button><button id="facility-upgrade0"></button><button id="facility-upgrade1"></button></div></div><div id="build-plan" class="build-plan" hidden><div><strong id="plan-name"></strong><span id="plan-effect"></span></div><button id="plan-cancel">取消</button><button id="plan-confirm">建設</button></div><div id="build-status" class="build-status"></div><div class="build-bar" id="build-bar">
-      <button class="build-option selected" data-tool="bolt"><span class="tile-icon bolt">⌁</span><span class="tool-text"><b>連射砲</b><small>70 G</small></span><kbd>1</kbd></button>
-      <button class="build-option" data-tool="cannon"><span class="tile-icon cannon">✹</span><span class="tool-text"><b>榴弾砲</b><small>120 G</small></span><kbd>2</kbd></button>
-      <button class="build-option" data-tool="frost"><span class="tile-icon frost">❄</span><span class="tool-text"><b>氷結塔</b><small>90 G</small></span><kbd>3</kbd></button>
-      <button class="build-option" data-tool="mine"><span class="tile-icon mine">◆</span><span class="tool-text"><b>資源施設</b><small>90 G</small></span><kbd>4</kbd></button>
-    </div>
-    <div id="scout-panel" class="scout-panel" hidden><div class="scout-head"><strong>遠征先を選択</strong><button id="scout-home">帰還</button></div><div id="scout-tabs" class="scout-tabs" hidden><button id="cpu-tab">CPU</button><button id="pvp-tab">対人</button></div><div id="scout-targets" class="scout-targets"></div><div id="scout-info"></div><div class="scout-route"><label>上陸地点 <select id="scout-port"></select></label><label>攻撃目標 <select id="scout-objective"></select></label><span id="scout-risk"></span></div><details id="scout-comparison"><summary>兵種比較（5種）</summary><div id="scout-units" class="scout-units"></div></details><div class="scout-actions"><button id="scout-test" class="expand-btn">自分の基地をテスト</button><button id="scout-start" class="primary">侵攻開始</button></div></div>
-    <div id="replay-panel" class="raid-panel" hidden><div class="raid-head"><strong id="replay-time"></strong><button id="replay-pause">一時停止</button><button id="replay-speed">×1</button><button id="replay-exit">終了</button></div></div><div id="raid-panel" class="raid-panel" hidden><div class="raid-head"><label for="raid-port">上陸地点</label><select id="raid-port"></select><strong id="raid-budget"></strong><label for="raid-objective">目標</label><select id="raid-objective"><option value="">灯台</option></select><button id="raid-speed">×1</button><button id="raid-end">終了</button></div><div id="raid-troops" class="raid-troops"></div><div id="unit-role"></div><div id="raid-state"></div></div>
-    <div class="battle-controls" id="battle-controls">
-      <button id="raid-btn" class="expand-btn">遠征</button><button id="expand-btn" class="expand-btn">＋ 島を追加</button><button id="start-wave" class="primary">襲撃開始 <span>▶</span></button>
-      <button id="speed-btn" class="speed-btn" hidden>速度 ×1</button>
-    </div>
+    <div id="facility-panel" class="facility-panel" hidden></div><div id="build-plan" class="build-plan" hidden></div><div id="build-status" class="build-status"></div><div class="build-bar" id="build-bar"></div>
+        <div id="scout-panel" class="scout-panel" hidden></div>
+    <div id="replay-panel" class="raid-panel" hidden></div>
+    <div id="raid-panel" class="raid-panel" hidden></div>
+    <div class="battle-controls" id="battle-controls"></div>
+
   </div>
   <div id="expand-panel" class="expand-panel" hidden><h2>どの島をつなぐ？</h2><p id="expand-detail">海域から無人島を選択</p><div id="expand-choices" class="expand-choices"></div><button id="confirm-expand" class="confirm-expand">この島をつなぐ</button><button id="close-expand" class="close-expand">準備に戻る</button></div>
-  <div id="overlay" class="overlay" hidden><div class="modal"><div class="eyebrow" id="overlay-label">GAME PAUSED</div><h1 id="overlay-title">一時停止</h1><p id="overlay-description"></p><div id="result-reward" class="result-reward" hidden><strong id="result-tp"></strong><span id="result-tp-balance"></span></div><div id="result-detail" hidden></div><button id="review-field" class="secondary" hidden>戦場を見る</button><button id="overlay-primary" class="primary">再開する ▶</button><button id="overlay-secondary" class="secondary" hidden>新しい島で再戦</button><button id="overlay-home" class="secondary overlay-home" hidden>ホームに戻る</button></div></div>
-  <dialog id="tech-dialog" class="game-dialog tech-dialog"><div class="dialog-heading"><h2>技術開発</h2><button data-close="tech-dialog" aria-label="閉じる">×</button></div><div class="tech-balance"><strong id="tech-balance"></strong><span id="tech-count"></span></div><p>解放した技術は次の防衛から使用できます。</p><div id="tech-list"></div><div id="tech-error" role="status"></div><button id="tech-close" class="primary">ホームに戻る</button></dialog><dialog id="online-dialog" class="game-dialog"><div class="dialog-heading"><h2>オンライン基地</h2><button data-close="online-dialog" aria-label="閉じる">×</button></div><p>専用の島を育て、ほかのプレイヤーの島を攻略。今のローカル基地はそのまま残ります。</p><label for="online-code">復帰コード（すでに基地を持っている場合）</label><input id="online-code" type="password" autocomplete="off" spellcheck="false" placeholder="64文字のコード"><div id="online-error" role="status"></div><div class="dialog-actions"><button id="online-create" class="expand-btn">新しい基地を作る</button><button id="online-connect" class="primary">接続</button></div></dialog>
-  <dialog id="code-dialog" class="game-dialog"><div class="dialog-heading"><h2>復帰コード</h2><button data-close="code-dialog" aria-label="閉じる">×</button></div><p>別の端末から同じ基地に接続できます。第三者には共有しないでください。</p><input id="recovery-code" readonly><button id="copy-code" class="primary">コピー</button></dialog>
-  <dialog id="history-dialog" class="game-dialog"><div class="dialog-heading"><h2 id="history-title">戦闘履歴</h2><button data-close="history-dialog" aria-label="閉じる">×</button></div><div id="history-list" class="history-list"></div></dialog>
+  <div id="overlay" class="overlay" hidden></div>
+  <dialog id="tech-dialog" class="game-dialog tech-dialog"><div class="dialog-heading"><h2>技術開発</h2><button data-close="tech-dialog" aria-label="閉じる">×</button></div><div class="tech-balance"><strong id="tech-balance"></strong><span id="tech-count"></span></div><p>解放した技術は次の防衛から使用できます。</p><div id="tech-list"></div><div id="tech-error" role="status"></div><button id="tech-close" class="primary">ホームに戻る</button></dialog>  <dialog id="online-dialog" class="game-dialog"></dialog>
+  <dialog id="code-dialog" class="game-dialog"></dialog>
+  <dialog id="history-dialog" class="game-dialog"></dialog>
   <div class="intro-tip" id="intro-tip" hidden></div>
 </section>
+<div id="react-ui-root"></div>
 </main></body></html>
